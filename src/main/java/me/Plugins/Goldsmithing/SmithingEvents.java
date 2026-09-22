@@ -108,7 +108,7 @@ public class SmithingEvents implements Listener{
 					if(nbt.getType().equalsIgnoreCase(brandingType) && nbt.getString("MMOITEMS_ITEM_ID").equalsIgnoreCase(brandingID)) {
 						if(t.getCurrentHits() > 2 || t.getCurrentSmallHits() > 2 || t.getCurrentTinkerHits() > 2) {
 							BlockData blockDustData = Material.GOLD_BLOCK.createBlockData();
-							t.getLocation().getWorld().spawnParticle(Particle.BLOCK_DUST, t.getLocation(), 20, blockDustData);
+							t.getLocation().getWorld().spawnParticle(Particle.BLOCK, t.getLocation(), 20, blockDustData);
 							p.getWorld().playSound(p.getLocation(), Sound.BLOCK_ANVIL_LAND, 0.4f, 1);
 							Integer level = 3;
 							if(getSmithingPercentage(p, t) >= 100.0) {
@@ -150,7 +150,7 @@ public class SmithingEvents implements Listener{
 						if(t.getCurrentGoldItems().equals(t.getMaxGoldItems()) && t.getCurrentJewelItems().equals(t.getMaxJewelItems())) {
 							t.setCurrentHits(t.getCurrentHits()+1);
 							BlockData blockDustData = Material.GOLD_BLOCK.createBlockData();
-							t.getLocation().getWorld().spawnParticle(Particle.BLOCK_DUST, t.getLocation(), 20, blockDustData);
+							t.getLocation().getWorld().spawnParticle(Particle.BLOCK, t.getLocation(), 20, blockDustData);
 							p.getWorld().playSound(p.getLocation(), Sound.BLOCK_ANVIL_USE, 0.4f, 1);
 							p.sendTitle(" ", ChatColor.GRAY + " Current regular hits: " + ChatColor.YELLOW + t.getCurrentHits(), 1, 40, 20);
 						} else {
@@ -163,7 +163,7 @@ public class SmithingEvents implements Listener{
 						if(t.getCurrentGoldItems().equals(t.getMaxGoldItems()) && t.getCurrentJewelItems().equals(t.getMaxJewelItems())) {
 							t.setCurrentSmallHits(t.getCurrentSmallHits()+1);
 							BlockData blockDustData = Material.GOLD_BLOCK.createBlockData();
-							t.getLocation().getWorld().spawnParticle(Particle.BLOCK_DUST, t.getLocation(), 20, blockDustData);
+							t.getLocation().getWorld().spawnParticle(Particle.BLOCK, t.getLocation(), 20, blockDustData);
 							p.getWorld().playSound(p.getLocation(), Sound.BLOCK_ANVIL_USE, 0.7f, 2);
 							p.sendTitle(" ", ChatColor.GRAY + " Current small hits: " + ChatColor.YELLOW + t.getCurrentSmallHits(), 1, 40, 20);
 						} else {
@@ -176,7 +176,7 @@ public class SmithingEvents implements Listener{
 						if(t.getCurrentGoldItems().equals(t.getMaxGoldItems()) && t.getCurrentJewelItems().equals(t.getMaxJewelItems())) {
 							t.setCurrentTinkerHits(t.getCurrentTinkerHits()+1);
 							BlockData blockDustData = Material.GOLD_BLOCK.createBlockData();
-							t.getLocation().getWorld().spawnParticle(Particle.BLOCK_DUST, t.getLocation(), 20, blockDustData);
+							t.getLocation().getWorld().spawnParticle(Particle.BLOCK, t.getLocation(), 20, blockDustData);
 							p.getWorld().playSound(p.getLocation(), Sound.BLOCK_ANVIL_LAND, 0.7f, 2);
 							p.sendTitle(" ", ChatColor.GRAY + " Current tinker hits: " + ChatColor.YELLOW + t.getCurrentTinkerHits(), 1, 40, 20);
 						} else {
@@ -209,7 +209,7 @@ public class SmithingEvents implements Listener{
 							}
 							item.setAmount(item.getAmount()-1);
 							BlockData blockDustData = Material.GOLD_BLOCK.createBlockData();
-							t.getLocation().getWorld().spawnParticle(Particle.BLOCK_DUST, t.getLocation(), 10, blockDustData);
+							t.getLocation().getWorld().spawnParticle(Particle.BLOCK, t.getLocation(), 10, blockDustData);
 							p.getWorld().playSound(p.getLocation(), Sound.ITEM_AXE_WAX_OFF, 0.7f, 2);
 							t.setCurrentGoldItems(t.getCurrentGoldItems()+1);
 							p.sendTitle(" ", ChatColor.GOLD + "Gold " + ChatColor.GRAY + " ingredients: " + ChatColor.YELLOW + t.getCurrentGoldItems() + "/" + t.getMaxGoldItems(), 1, 40, 20);
@@ -221,7 +221,7 @@ public class SmithingEvents implements Listener{
 							}
 							item.setAmount(item.getAmount()-1);
 							BlockData blockDustData = Material.AMETHYST_BLOCK.createBlockData();
-							t.getLocation().getWorld().spawnParticle(Particle.BLOCK_DUST, t.getLocation(), 10, blockDustData);
+							t.getLocation().getWorld().spawnParticle(Particle.BLOCK, t.getLocation(), 10, blockDustData);
 							p.getWorld().playSound(p.getLocation(), Sound.ITEM_AXE_WAX_OFF, 0.7f, 2);
 							t.setCurrentJewelItems(t.getCurrentJewelItems()+1);
 							p.sendTitle(" ", ChatColor.LIGHT_PURPLE + "Jewel " + ChatColor.GRAY + " ingredients: " + ChatColor.YELLOW + t.getCurrentJewelItems() + "/" + t.getMaxJewelItems(), 1, 40, 20);
