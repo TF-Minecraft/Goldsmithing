@@ -1,5 +1,5 @@
 main: me.Plugins.Goldsmithing.Goldsmithing
-api-version: 1.18
+api-version: '1.21.10'
 name: Goldsmithing
 version: ${project.version}
 author: Drefvelin
