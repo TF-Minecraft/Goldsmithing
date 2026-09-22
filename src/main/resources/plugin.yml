@@ -1,4 +1,4 @@
-main: me.Plugins.Goldsmithing.Goldsmithing
+main: net.tfminecraft.goldsmithing.Goldsmithing
 api-version: '1.21.10'
 name: Goldsmithing
 version: ${project.version}
