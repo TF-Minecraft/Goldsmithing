@@ -15,6 +15,8 @@ import org.bukkit.inventory.meta.ItemMeta;
 public class InventoryManager {
 	
 
+	// Keep the existing legacy text representation, formatting, and exact-string comparisons.
+	@SuppressWarnings("deprecation")
 	public void MenuInventory(Player player) {
 		Inventory i = Goldsmithing.plugin.getServer().createInventory(null, 27, ChatColor.GOLD + "Goldsmithing Menu");
 		Integer slot = 0;
