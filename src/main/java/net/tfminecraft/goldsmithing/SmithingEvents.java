@@ -42,6 +42,8 @@ public class SmithingEvents implements Listener{
 	public HashMap<Player, Location> currentStation = new HashMap<>();
 	InventoryManager invManager = new InventoryManager();
 	
+	// Keep the existing legacy text representation, formatting, and exact-string comparisons.
+	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void openMenuEvent(PlayerInteractEvent e) {
 		if(!e.getAction().equals(Action.RIGHT_CLICK_BLOCK)) return;
@@ -69,6 +71,8 @@ public class SmithingEvents implements Listener{
 			invManager.MenuInventory(e.getPlayer());
 		}
 	}
+	// Keep the existing legacy text representation, formatting, and exact-string comparisons.
+	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void smithHitEvent(PlayerInteractEvent e) {
 		if(e.getAction().equals(Action.LEFT_CLICK_BLOCK) && e.getPlayer().isSneaking() == true) {
@@ -189,6 +193,8 @@ public class SmithingEvents implements Listener{
 			}
 		}	
 	}
+	// Keep the existing legacy text representation, formatting, and exact-string comparisons.
+	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void addItemEvent(PlayerInteractEvent e) {
 		if(!e.getAction().equals(Action.RIGHT_CLICK_BLOCK)) return;
@@ -248,6 +254,8 @@ public class SmithingEvents implements Listener{
 		}
 	}
 	
+	// Keep the existing legacy text representation, formatting, and exact-string comparisons.
+	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void invenClick(InventoryClickEvent e) {
 		if(e.getClickedInventory() == null) return;
@@ -306,6 +314,8 @@ public class SmithingEvents implements Listener{
 		}
 		return i;
 	}
+	// Keep the existing legacy text representation, formatting, and exact-string comparisons.
+	@SuppressWarnings("deprecation")
 	public void createJewelryItem(Player p, JewelryType t, Integer lvl) {
 		for(Jewelry j : t.getTiers()) {
 			if(j.getLvl().equals(lvl)) {
