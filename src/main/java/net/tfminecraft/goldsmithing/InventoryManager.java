@@ -1,5 +1,7 @@
 package net.tfminecraft.goldsmithing;
 
+import net.tfminecraft.goldsmithing.util.LegacyModelData;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +23,7 @@ public class InventoryManager {
 				ItemStack item = new ItemStack(Material.valueOf(t.getMaterial().toUpperCase()), 1);
 				ItemMeta meta = item.getItemMeta();
 				meta.setDisplayName(ChatColor.GOLD + t.getName());
-				meta.setCustomModelData(t.getModelData());
+				LegacyModelData.set(meta, t.getModelData());
 				List<String> lore = new ArrayList<String>();
 				if(getGoldIngredientAmount(t) > 0) {
 					lore.add(ChatColor.GRAY + "Requires " + ChatColor.GREEN + getGoldIngredientAmount(t) + " " + ChatColor.GOLD + "Gold Ingredients");
