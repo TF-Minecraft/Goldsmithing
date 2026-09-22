@@ -1,4 +1,4 @@
-package me.Plugins.Goldsmithing;
+package net.tfminecraft.goldsmithing;
 
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;

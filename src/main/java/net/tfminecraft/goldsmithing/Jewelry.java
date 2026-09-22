@@ -1,4 +1,4 @@
-package me.Plugins.Goldsmithing;
+package net.tfminecraft.goldsmithing;
 
 import java.util.ArrayList;
 import java.util.List;
