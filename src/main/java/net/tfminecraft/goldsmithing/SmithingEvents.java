@@ -1,5 +1,7 @@
 package net.tfminecraft.goldsmithing;
 
+import net.tfminecraft.goldsmithing.util.LegacyModelData;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -315,7 +317,7 @@ public class SmithingEvents implements Listener{
 				StringData itemName = (StringData) mmoitem.getData(ItemStats.NAME);
 				itemName.setString(ChatColor.GOLD + j.getName());
 				mmoitem.replaceData(ItemStats.NAME, itemName);
-				StatHistory hist = StatHistory.from(mmoitem, ItemStats.NAME);
+				StatHistory hist = mmoitem.computeStatHistory(ItemStats.NAME);
 				if (hist != null) {
 	                NameData og = (NameData) hist.getOriginalData();
 	                og.setString(ChatColor.GOLD + j.getName());
@@ -332,7 +334,7 @@ public class SmithingEvents implements Listener{
 				}
 				ItemStack finalItem = mmoitem.newBuilder().build();
 				ItemMeta meta = finalItem.getItemMeta();
-				meta.setCustomModelData(j.getModelData());
+				LegacyModelData.set(meta, j.getModelData());
 				finalItem.setItemMeta(meta);
 				p.getInventory().addItem(finalItem);			
 			}
